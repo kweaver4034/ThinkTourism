@@ -1,0 +1,27 @@
+<style>
+th {font-family: Tahoma, Geneva, sans-serif;background-color: #0D4C43;color:white}
+input {background-color: #0D4C43;padding: 10px 24px;border: 2px solid #0D4C43;color: white;border-radius: 4px;width: 250px;font-size:14px}
+div {background-color:white;border: 2px solid #0D4C43;text-align:center;width: 300px;margin:0 auto}
+tr {background-color: white;}
+</style>
+
+<div style="border:none;width:100vw;height:100vh;position:fixed;float:left;overflow:hidden;z-index: -1;top:0px;left:0px">
+<img style="height:140vh" src = "https://diy.clarkson.edu/wp-content/uploads/2018/07/Travel-Blog-2.jpg">
+</div>
+
+<br>
+{% block content %}
+    <table border="2px solid white" align="center"><tr>
+    {% for field in fieldnames %}
+    <th style="padding:10px;text-align:left">{{field}}</th>
+    {% endfor %}
+    </tr>
+    {% for row in results %}
+    <tr>
+    {% for item in row %}
+    <td style="padding:5px">{{item}}</td>
+    {% endfor %}
+    </tr>
+    {% endfor %}
+    </table><br><br><div><br><form action="http://127.0.0.1:5000/home"><input type="submit" value="Home" /></form></div>
+{% endblock %}

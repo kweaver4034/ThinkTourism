@@ -1,0 +1,53 @@
+<style>
+h1 {font-family: Tahoma, Geneva, sans-serif;color: #0D4C43;text-align:center}
+p {font-family: Tahoma, Geneva, sans-serif;#0D4C43;text-align:center}
+label {font-family: Tahoma, Geneva, sans-serif;#0D4C43;text-align:center}
+input {background-color: white;padding: 10px 24px;border: 2px solid #0D4C43;color: #0D4C43;border-radius: 4px;width: 250px;text-align:center;font-size:14px}
+.input2 {background-color: #0D4C43;padding: 10px 24px;border: 2px solid #0D4C43;color: white;border-radius: 4px;width: 250px;text-align:center}
+.input2:hover {background-color: white;padding: 10px 24px;border: 2px solid #0D4C43;color: #0D4C43;border-radius: 4px;width: 250px;text-align:center}
+div {background-color:white;border: 2px solid #0D4C43;text-align:center;width: 300px;margin:0 auto}
+</style>
+
+<h1>Using this page you can add questions to the database for use!</h1>
+
+<div style="border:none;width:100vw;height:100vh;position:fixed;float:left;overflow:hidden;z-index: -1;top:0px;left:0px">
+<img style="height:140vh" src = "https://diy.clarkson.edu/wp-content/uploads/2018/07/Travel-Blog-2.jpg">
+</div>
+
+<form action="/submitquestions3.php" method="POST">
+    <div>
+        <p>Question Details</p>
+        <input type="text" id="QuestionText" Name="QuestionText" size="40" required="True" placeholder="Question Text"><br>
+        <br>
+        <input type="text" id="QuestionClass" name="QuestionClass" size="20" required="True" placeholder="Question Class"><br>
+        <br>
+        <input type="text" id="QuestionType" name="QuestionType" size="20" required="True" placeholder="Question Type"><br>
+        <br>
+        <input type="text" id="QuestionGroup" name="QuestionGroup" size="20" required="True" placeholder="Question Group ID"><br>
+        <br>
+    </div><br>
+    <div>
+        <p>Choice Details<p/>
+        <input type="text" id="Choice1Text" name="Choice1Text" size="20" required="True" placeholder="Choice 1 Text"><br>
+        <br>
+        <input type="text" id="Choice1ImageURL" name="Choice1ImageURL" size="20" placeholder="Choice 1 Image URL"><br>
+        <br>
+        <input type="text" id="Choice2Text" name="Choice2Text" size="20" required="True" placeholder="Choice 2 Text"><br>
+        <br>
+        <input type="text" id="Choice2ImageURL" name="Choice2ImageURL" size="20" placeholder="Choice 2 Image URL"><br><br>
+        <input type="text" id="Choice3Text" name="Choice3Text" size="20" required="True" placeholder="Choice 3 Text"><br>
+        <br>
+        <input type="text" id="Choice3ImageURL" name="Choice3ImageURL" size="20" placeholder="Choice 3 Image URL"><br>
+        <br>
+        <input class="input2" type="submit" value="Submit" /><br>
+    </div>
+</form>
+<div><br>
+<form action="http://127.0.0.1:5000/viewquestiongroups">
+    <input class="input2" type="submit" value="View Question Groups" /><br>
+</form>
+
+<form action="http://127.0.0.1:5000/home">
+    <input class="input2" type="submit" value="Home" /><br>
+</form>
+</div>

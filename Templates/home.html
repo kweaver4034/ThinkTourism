@@ -1,0 +1,63 @@
+<style>
+h1 {font-family: Tahoma, Geneva, sans-serif;color: #0D4C43;}
+p {font-family: Tahoma, Geneva, sans-serif;#0D4C43;}
+input:hover {background-color: white;padding: 10px 24px;border: 2px solid #0D4C43;color: #0D4C43;border-radius: 4px;width: 250px;font-size:14px}
+input {background-color: #0D4C43;padding: 10px 24px;border: 2px solid #0D4C43;color: white;border-radius: 4px;width: 250px;font-size:14px}
+div {background-color:white;border: 2px solid #0D4C43;text-align:center;width: 300px;margin:0 auto}
+</style>
+
+<h1 style="text-align:center;">Welcome to Clarkson's Customized Tourism Database!</h1>
+
+<p style="text-align:center;">Use this interface to interact with the data!  Click a button below to get started!</p><br><br>
+<div style="border:none;width:100vw;height:100vh;position:fixed;float:left;overflow:hidden;z-index: -1;top:0px;left:0px">
+<img style="height:140vh" src = "https://diy.clarkson.edu/wp-content/uploads/2018/07/Travel-Blog-2.jpg">
+</div>
+
+<div style="border:none;background-color:transparent">
+<div>
+<p>Add Data</p>
+<form action="http://127.0.0.1:5000/createquestiongroup">
+    <input type="submit" value="Create New Question Group" />
+</form>
+
+<form action="http://127.0.0.1:5000/addquestions">
+    <input type="submit" value="Add New Questions" />
+</form>
+</div>
+<br>
+<div style="text-align:center;">
+<p>View Data</p>
+
+<form action="http://127.0.0.1:5000/viewquestiongroups">
+    <input type="submit" value="View Existing Question Groups" />
+</form>
+
+<form action="http://127.0.0.1:5000/query">
+    <input type="submit" value="Query Database" />
+</form>
+
+<form action="http://127.0.0.1:5000/samplequestionnaire">
+    <input type="submit" value="Sample Questionniare Tool" />
+</form>
+
+</div>
+<br>
+<div>
+<p>Administrative</p>
+
+<form action="http://127.0.0.1:5000/updatepassword">
+    <input type="submit" value="Update Password" />
+</form>
+
+{% block content %}
+{% if session['Username']=='admin' %}
+<form action="http://127.0.0.1:5000/adduser">
+    <input type="submit" value="Add New User" />
+</form>
+<form action="http://127.0.0.1:5000/resetuserpassword">
+    <input type="submit" value="Reset User Password" />
+</form>
+{% endif %}
+{% endblock %}
+</div>
+</div>

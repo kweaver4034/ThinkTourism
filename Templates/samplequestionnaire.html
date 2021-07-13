@@ -1,0 +1,28 @@
+<style>
+h1 {font-family: Tahoma, Geneva, sans-serif;color: #0D4C43;text-align:center}
+p {font-family: Tahoma, Geneva, sans-serif;#0D4C43;text-align:center;}
+label {font-family: Tahoma, Geneva, sans-serif;#0D4C43;text-align:center}
+input {background-color: white;padding: 10px 24px;border: 2px solid #0D4C43;color: #0D4C43;border-radius: 4px;width: 250px;text-align:center;font-size:14px}
+.input2 {background-color: #0D4C43;padding: 10px 24px;border: 2px solid #0D4C43;color: white;border-radius: 4px;width: 250px;text-align:center}
+.input2:hover {background-color: white;padding: 10px 24px;border: 2px solid #0D4C43;color: #0D4C43;border-radius: 4px;width: 250px;text-align:center}
+div {background-color:white;border: 2px solid #0D4C43;text-align:center;width: 300px;margin:0 auto}
+</style>
+
+<div style="border:none;width:100vw;height:100vh;position:fixed;float:left;overflow:hidden;z-index: -1;top:0px;left:0px">
+<img style="height:140vh" src = "https://diy.clarkson.edu/wp-content/uploads/2018/07/Travel-Blog-2.jpg">
+</div>
+
+<h1> Using this page you can test the questionniare for a particular question group! </h1>
+
+<p> Please select the question group you would like to use below: </p>
+
+<div><br>
+{% for Name in GroupNames %}
+<form action="http://127.0.0.1:5000/getsamplequestionnaire?QuestionGroup={{Name}}&Question=1" method="POST"><input class="input2" type="submit" value="{{Name}}" /><input type="hidden" id="LastQuestion" name="LastQuestion" value="False"></form>
+{% endfor %}
+</div><br><div><br>
+
+<form action="http://127.0.0.1:5000/home">
+    <input class="input2" type="submit" value="Home" /><br>
+</form>
+</div>

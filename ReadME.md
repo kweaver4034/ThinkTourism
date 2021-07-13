@@ -27,7 +27,7 @@ The database contains the following tables:
 # SQL Interface
 This application comes with a lightweight interface for the attached SQL database that allows authorized users to conduct the following activities:
 >- Create new question groups
->- Add new questions (which respective choices)
+>- Add new questions (with respective choices)
 >- Query the database
 >- View a sample questionnaire
 >- Update their password
